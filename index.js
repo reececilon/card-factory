@@ -2,7 +2,6 @@ const formBlock = document.getElementById('submitForm');
 const greetsBlock = document.getElementById('showGreeting');
 const refresh = document.getElementById('refresh');
 
-
 greetsBlock.style.display = 'none'
 refresh.style.display = 'none'
 
