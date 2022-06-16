@@ -1,20 +1,31 @@
 const formBlock = document.getElementById('submitForm');
 const greetsBlock = document.getElementById('showGreeting');
+const refresh = document.getElementById('refresh');
+
 
 greetsBlock.style.display = 'none'
+refresh.style.display = 'none'
 
 function showGreeting(greeting, event, message) {
     formBlock.style.display = 'none'
     greetsBlock.style.display = 'block'
+    refresh.style.display = 'block'
 
     const greet = document.createElement('h1');
+    greet.style.color = 'whitesmoke';
+    greet.style.fontWeight = 'bolder';
     greet.innerText = greeting;
 
+
     const eventTag = document.createElement('h2');
+    eventTag.style.color = 'whitesmoke';
+    eventTag.style.fontWeight = 'bolder';
     eventTag.innerText = `Happy ${event}!`;
 
     const messageTag = document.createElement('p');
-    messageTag.innerText = message
+    messageTag.style.color = 'whitesmoke';
+    messageTag.style.fontWeight = 'bolder';
+    messageTag.innerText = message;
 
     greetsBlock.appendChild(greet);
     greetsBlock.appendChild(eventTag);
@@ -43,6 +54,10 @@ document.getElementById('submit').addEventListener('click', (e) => {
 
 
     showGreeting(greeting, event, message)
+})
+
+refresh.addEventListener('click', () => {
+    location.reload();
 })
 
 
